@@ -15,6 +15,22 @@
             "category": "Alimentação",
             "price": 48,
             "created_at": "2022-01-01T11:25:00.505Z"
+        },
+        {
+            "id": 3,
+            "description": "Pneu Novo",
+            "type": "outcome",
+            "category": "Reparação",
+            "price": 850,
+            "created_at": "2022-01-01T11:25:00.505Z"
+        },
+        {
+            "id": 4,
+            "description": "Mesa",
+            "type": "income",
+            "category": "Venda",
+            "price": 120,
+            "created_at": "2022-01-01T11:25:00.505Z"
         }
     ]
 }
