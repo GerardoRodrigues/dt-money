@@ -1,36 +1,63 @@
+import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SearchForm";
-import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styles";
+import {
+  PriceHighlight,
+  TransactionsContainer,
+  TransactionsTable,
+} from "./styles";
 
-export function Transaction () {
-    return (
-        <div>
-            <Header />
-            <Summary />
+interface Transactions {
+  id: number;
+  description: string;
+  price: number;
+  type: "income" | "outcome";
+  category: string;
+  created_at: string;
+}
 
-            <TransactionsContainer>
-                <SearchForm />
+export function Transaction() {
+  const [transactions, setTransactions] = useState<Transactions[]>([]);
 
-                <TransactionsTable>
-                    <tr>
-                        <td width="50%">Desenvolvimento</td>
-                        <td>
-                            <PriceHighlight variant="income">R$ 12.000,00</PriceHighlight>
-                        </td>
-                        <td>Venda</td>
-                        <td>18/02/2025</td>
-                    </tr>
-                    <tr>
-                        <td width="50%">Hambuguer</td>
-                        <td>
-                            <PriceHighlight variant="outcome">-R$ 80.00,00</PriceHighlight>
-                        </td>
-                        <td>Alimentação</td>
-                        <td>16/02/2025</td>
-                    </tr>
-                </TransactionsTable>
-            </TransactionsContainer>
-        </div>
-    )
+  async function loadTransactions() {
+    const response = await fetch("http://localhost:3000/transactions");
+    const data = await response.json();
+
+    setTransactions(data);
+  }
+
+  useEffect(() => {
+    loadTransactions();
+  }, []);
+
+  return (
+    <div>
+      <Header />
+      <Summary />
+
+      <TransactionsContainer>
+        <SearchForm />
+
+        <TransactionsTable>
+          <tbody>
+            {transactions.map((transaction) => {
+              return (
+                <tr key={transaction.id}>
+                  <td width="50%">{transaction.description}</td>
+                  <td>
+                    <PriceHighlight variant={transaction.type}>
+                      {transaction.price}
+                    </PriceHighlight>
+                  </td>
+                  <td>{transaction.category}</td>
+                  <td>{transaction.created_at}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </TransactionsTable>
+      </TransactionsContainer>
+    </div>
+  );
 }
