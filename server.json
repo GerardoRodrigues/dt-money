@@ -1,36 +1,52 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "description": "Desenvolvimento de software",
-            "type": "income",
-            "category": "Venda",
-            "price": 14000,
-            "created_at": "2022-02-08T11:48:00.505Z"
-        },
-        {
-            "id": 2,
-            "description": "Hambuguer",
-            "type": "outcome",
-            "category": "Alimentação",
-            "price": 48,
-            "created_at": "2022-01-01T11:25:00.505Z"
-        },
-        {
-            "id": 3,
-            "description": "Pneu Novo",
-            "type": "outcome",
-            "category": "Reparação",
-            "price": 850,
-            "created_at": "2022-01-01T11:25:00.505Z"
-        },
-        {
-            "id": 4,
-            "description": "Mesa",
-            "type": "income",
-            "category": "Venda",
-            "price": 120,
-            "created_at": "2022-01-01T11:25:00.505Z"
-        }
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de software",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "created_at": "2025-02-20T14:29:09.668Z"
+    },
+    {
+      "id": 2,
+      "description": "Hambuguer",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 48,
+      "created_at": "2025-02-18T14:29:09.668Z"
+    },
+    {
+      "id": 3,
+      "description": "Pneu Novo",
+      "type": "outcome",
+      "category": "Reparação",
+      "price": 850,
+      "created_at": "2025-02-12T14:29:09.668Z"
+    },
+    {
+      "id": 4,
+      "description": "Mesa",
+      "type": "income",
+      "category": "Venda",
+      "price": 120,
+      "created_at": "2025-02-10T14:29:09.668Z"
+    },
+    {
+      "id": "1550",
+      "description": "Computador",
+      "price": 3500,
+      "category": "Compra",
+      "type": "outcome",
+      "created_at": "2025-02-22T14:29:09.668Z"
+    },
+    {
+      "id": "0f4a",
+      "description": "Ar condicionado",
+      "price": 2300,
+      "category": "Compra",
+      "type": "outcome",
+      "created_at": "2025-02-22T14:45:40.399Z"
+    }
+  ]
 }
