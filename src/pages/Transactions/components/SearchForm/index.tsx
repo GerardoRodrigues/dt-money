@@ -23,7 +23,6 @@ export function SearchForm() {
 
     function search(data: SearchFormInputs) {
         loadTransactions(data.query);
-        console.log(data)
     }
 
     return (
